@@ -4,11 +4,10 @@ import time
 
 
 class Bank:
-    balance = 0
-    lock = Lock()
 
     def __init__(self):
-        pass
+        self.balance = 0
+        self.lock = Lock()
 
     def deposit(self):
         for i in range(100):
@@ -18,7 +17,6 @@ class Bank:
             if self.balance >= 500 and self.lock.locked():
                 self.lock.release()
             time.sleep(0.001)
-
 
     def take(self):
         for i in range(100):
